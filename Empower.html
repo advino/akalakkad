@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html>
+<meta charset="utf-8">
+
+<head>
+  <title>Empower</title>
+
+  <script src="https://code.jquery.com/jquery-3.3.0.js" integrity="sha256-TFWSuDJt6kS+huV+vVlyV1jM3dwGdeNWqezhTxXB/X8=" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function() {
+      $("body").hide().fadeIn(1500);
+    });
+  </script>
+
+
+  <style>
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-light.ttf);
+      font-weight: lighter;
+    }
+
+
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-book.ttf);
+      font-weight: 300;
+
+    }
+
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-bold.ttf);
+      font-weight: bold;
+    }
+
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-mono.ttf);
+      font-weight: 100;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      background: #f7f7f7;
+    }
+
+    h1 {
+
+      font-family: Maison Neue;
+    }
+
+    #root {
+      width: 100%;
+    }
+
+    #navigation {
+
+      width: 90%;
+
+      display: flex;
+      justify-content: flex-end;
+      padding: 15px;
+      padding-right: 30px;
+      font-family: Maison Neue;
+      font-size: 16px;
+      font-weight: 100;
+
+    }
+
+    .navItem {
+
+      margin-right: 20px;
+    }
+
+    #titleBlock {
+      width: 75%;
+      max-width: 750px;
+      margin: auto;
+      margin-bottom: 100px;
+      padding: 10px;
+    }
+
+    #projectTags {
+
+      width: auto;
+
+    }
+
+    .tag {
+      display: inline;
+      min-width: 75px;
+      padding: 8px;
+      margin-right: 10px;
+      text-align: center;
+      font-family: Maison Neue;
+      font-weight: 100;
+      height: 50%;
+      background: #E7E7E7;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    #description {
+      display: inline-block;
+      margin-top: 30px;
+      width: 300px;
+      font-family: Maison Neue;
+      font-weight: 100;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    #empowerScreen {
+
+      display: inline-block;
+
+      float: right;
+
+
+      width: 300px;
+      height: auto;
+
+      margin-bottom: 100px;
+    }
+
+    #infoBlock {
+
+      width: 90%;
+      max-width: 920px;
+      margin: auto;
+      margin-top: 125px;
+
+    }
+
+    #empowerCaseStudy {
+
+      width: 100%;
+      height: auto;
+      margin: auto;
+    }
+
+    #scrollButton {
+      display: none;
+      width: 50px;
+      height: auto;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+    }
+
+  </style>
+
+
+</head>
+
+
+<body>
+
+  <div id="root">
+    <nav id="navigation"><span id="work" class="navItem">Work</span><span class="navItem" id="about">About</span></nav>
+    <div id="titleBlock">
+      <h1>Case Study: Empower</h1>
+      <div id="projectTags">
+        <p class="tag">UX</p>
+        <p class="tag">Interaction Design</p>
+
+      </div>
+
+      <p id="description">Empower is a start-up based in San Francisco. Their main goal is to help users make responsible financial decisions while building personal wealth. I was given the opportunity to iterate on a possible investment feature within the application, aimed
+        at helping users understand the value of investing and how they might begin the process.
+        </br>
+        </br>
+        My process involved research and problem-framing, developing user personas, wireframes, mockups, and high-fidelity prototypes. Addtionally I worked with developers on the team to perform feasibility tests and reiterate on user interfaces and flows
+
+      </p>
+
+      <img id="empowerScreen" src="EmpowerImages/empowerScreen.png">
+    </div>
+
+
+    <div id="infoBlock">
+
+      <img id="empowerCaseStudy" src="EmpowerImages/empowerCaseStudy.png">
+
+    </div>
+
+    <img id="scrollButton" src="scrollButton2.png">
+  </div>
+
+  <script>
+    let button = document.getElementById('scrollButton');
+
+
+    window.onscroll = function() {
+      scrollFunction();
+
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById('scrollButton').style.display = 'block';
+
+      } else {
+        document.getElementById('scrollButton').style.display = 'none';
+      }
+
+    }
+
+
+      button.addEventListener('click', function() {
+
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      });
+
+  </script>
+
+  <script>
+    let work = document.getElementById('work');
+    let about = document.getElementById('about');
+
+    work.addEventListener('click', function() {
+
+      window.location.href = 'index.html';
+    });
+
+    work.addEventListener('mouseover', function() {
+
+      work.style.cursor = 'pointer';
+    });
+
+    about.addEventListener('mouseover', function() {
+
+      about.style.cursor = 'pointer';
+    });
+
+    about.addEventListener('click', function() {
+
+      window.location.href = 'About.html';
+    });
+
+
+  </script>
+
+
+</body>
+
+
+</html>

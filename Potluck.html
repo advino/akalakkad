@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html>
+<meta charset="utf-8">
+
+<head>
+  <title>Potluck</title>
+
+  <script src="https://code.jquery.com/jquery-3.3.0.js" integrity="sha256-TFWSuDJt6kS+huV+vVlyV1jM3dwGdeNWqezhTxXB/X8=" crossorigin="anonymous"></script>
+
+  <script>
+
+  $(document).ready(function(){
+    $("body").hide().fadeIn(1500);
+  });
+  </script>
+
+
+  <style>
+
+  @font-face {
+    font-family: Maison Neue;
+    src: url(Fonts/maisonneue-light.ttf);
+    font-weight: lighter;
+  }
+
+
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-book.ttf);
+      font-weight: 300;
+
+    }
+
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-bold.ttf);
+      font-weight: bold;
+    }
+
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-mono.ttf);
+      font-weight: 100;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    h1 {
+
+      font-family: Maison Neue;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      background: #f7f7f7;
+    }
+
+    #root {
+      width: 100%;
+
+    }
+
+    #titleBlock {
+      width: 75%;
+      max-width: 750px;
+      margin: auto;
+      margin-bottom: 100px;
+      padding: 10px;
+    }
+
+    #navigation {
+      width: 90%;
+
+      display: flex;
+      justify-content: flex-end;
+      padding: 15px;
+      padding-right: 30px;
+      font-family: Maison Neue;
+      font-size: 16px;
+      font-weight: 100;
+
+    }
+
+    .navItem {
+
+      margin-right: 20px;
+    }
+
+    #description {
+      display: inline-block;
+      margin-top: 30px;
+      width: 300px;
+      font-family: Maison Neue;
+      font-weight: 100;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    #potluckScreen {
+      display: block;
+
+      float: right;
+
+
+      width: 300px;
+      height: auto;
+
+
+      margin-bottom: 100px;
+
+    }
+
+    #infoBlock {
+
+      width: 90%;
+      max-width: 920px;
+      margin: auto;
+      margin-top: 125px;
+
+    }
+
+    #projectTags {
+
+      width: auto;
+
+    }
+
+    .tag {
+      display: inline;
+      min-width: 75px;
+      padding: 8px;
+      margin-right: 10px;
+      text-align: center;
+      font-family: Maison Neue;
+      font-weight: 100;
+      height: 50%;
+      background: #E7E7E7;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+
+    #caseStudyImage {
+
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    #scrollButton {
+      display: none;
+      width: 50px;
+      height: auto;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div type="container" id="root">
+    <nav id="navigation"><span class="navItem" id="work">Work</span> <span class="navItem" id="about">About</span></nav>
+    <div id="titleBlock">
+      <h1>Potluck</h1>
+
+      <div id="projectTags">
+        <p class="tag">UX</p>
+        <p class="tag">Interaction Design</p>
+      </div>
+
+      <p id="description">Food always tastes better when shared with others! I built a mobile application that helps users find recipes both new and old alike, and encourages them to share them with friends and family. </br></br>
+
+        This project was part of a design exercise I recieved during the application process at Yelp. My process involved research and problem-framing, developing user personas, wireframes, mockups, and high-fidelity prototypes.
+
+      </p>
+
+      <img id="potluckScreen" src="PotluckImages/PotluckFinal2.png">
+    </div>
+
+    <div id="infoBlock">
+      <img id="caseStudyImage" src="PotluckImages/caseStudy2.png">
+    </div>
+
+      <img id="scrollButton" src="scrollButton2.png">
+  </div>
+
+  <script>
+    let button = document.getElementById('scrollButton');
+
+
+    window.onscroll = function() {
+      scrollFunction();
+
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById('scrollButton').style.display = 'block';
+
+      } else {
+        document.getElementById('scrollButton').style.display = 'none';
+      }
+
+    }
+
+
+      button.addEventListener('click', function() {
+
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      });
+
+  </script>
+
+  <script>
+    let work = document.getElementById('work');
+    let about = document.getElementById('about');
+    work.addEventListener('click', function() {
+
+      window.location.href = 'index.html';
+
+    });
+
+    about.addEventListener('click', function() {
+
+      window.location.href = 'About.html';
+    });
+
+    work.addEventListener('mouseover', function() {
+
+      work.style.cursor = 'pointer';
+    });
+
+    about.addEventListener('mouseover', function() {
+
+      about.style.cursor = 'pointer';
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html>
+<meta charset="utf-8">
+
+<head>
+  <title>GreetingStreet</title>
+
+  <script src="https://code.jquery.com/jquery-3.3.0.js" integrity="sha256-TFWSuDJt6kS+huV+vVlyV1jM3dwGdeNWqezhTxXB/X8=" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function() {
+
+      $('body').hide().fadeIn(1500);
+
+
+    });
+  </script>
+
+  <style>
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-light.ttf);
+      font-weight: lighter;
+    }
+
+
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-book.ttf);
+      font-weight: 300;
+
+    }
+
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-bold.ttf);
+      font-weight: bold;
+    }
+
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-mono.ttf);
+      font-weight: 100;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+
+    body {
+      display: flex;
+      justify-content: center;
+      background: #f7f7f7;
+    }
+
+    #root {
+      width: 100%;
+    }
+
+    #navigation {
+      width: 90%;
+
+      display: flex;
+      justify-content: flex-end;
+
+
+      padding: 15px;
+      padding-right: 30px;
+      font-family: Maison Neue;
+      font-size: 16px;
+      font-weight: 100;
+
+
+    }
+
+    .navItem {
+
+      margin-right: 20px;
+    }
+
+    #titleBlock {
+      width: 75%;
+      max-width: 750px;
+      margin: auto;
+      margin-bottom: 50px;
+      padding: 10px;
+    }
+
+    h1 {
+      font-family: Maison Neue;
+    }
+
+    #projectTags {
+
+      width: auto;
+    }
+
+    .tag {
+      display: inline;
+      min-width: 75px;
+      padding: 8px;
+      margin-right: 10px;
+      text-align: center;
+      font-family: Maison Neue;
+      font-weight: 100;
+      height: 50%;
+      background: #E7E7E7;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    #description {
+      display: inline-block;
+      margin-top: 30px;
+      width: 300px;
+      font-family: Maison Neue;
+      font-weight: 100;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    #infoBlock {
+
+      width: 90%;
+      max-width: 920px;
+      margin: auto;
+
+
+    }
+
+    #greetingStreetCaseStudy {
+      width: 100%;
+      display: block;
+      height: auto;
+      margin: auto;
+    }
+
+    #scrollButton {
+      display: none;
+      width: 50px;
+      height: auto;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+
+
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+  <div id="root">
+    <nav id="navigation"><span class="navItem" id="work">Work</span><span class="navItem" id="about">About</span></nav>
+    <div id="titleBlock">
+      <h1>Case Study: Greeting Street</h1>
+
+      <div id="projectTags">
+        <p class="tag">UX</p>
+        <p class="tag">Data-Driven Design</p>
+        <p class="tag">Physical Computing</p>
+
+      </div>
+
+      <p id="description"> Last fall I participated in a studio sponsored by Tellart, an Experience Design studio based in Providence, RI. I developed a set of digital kiosks that facilitated micro-interactions between city commuters in order to help develop empathetic city
+        environments.
+        </br>
+        </br>
+        My process included field reserach, problem framing, paper/low-fidelity prototyping, electronic hardware design, and user testing.
+    </div>
+
+    <div id="infoBlock">
+      <img id="greetingStreetCaseStudy" src="GreetingStreetImages/greetingStreetCaseStudy2.png">
+    </div>
+
+    <img id="scrollButton" src="scrollButton2.png">
+  </div>
+
+
+  <script>
+    let button = document.getElementById('scrollButton');
+
+
+    window.onscroll = function() {
+      scrollFunction();
+
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById('scrollButton').style.display = 'block';
+
+      } else {
+        document.getElementById('scrollButton').style.display = 'none';
+      }
+
+    }
+
+
+      button.addEventListener('click', function() {
+
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      });
+
+  </script>
+
+  <script>
+    let work = document.getElementById('work');
+    let about = document.getElementById('about');
+
+
+
+    work.addEventListener('click', function() {
+
+      window.location.href = 'index.html';
+    });
+
+    about.addEventListener('click', function() {
+
+      window.location.href = 'About.html';
+    });
+
+    work.addEventListener('mouseover', function() {
+
+      work.style.cursor = 'pointer';
+    });
+
+    about.addEventListener('mouseover', function() {
+
+      about.style.cursor = 'pointer';
+    });
+  </script>
+
+</body>
+
+
+</html>

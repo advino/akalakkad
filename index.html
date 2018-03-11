@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Supermercado+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.3.0.js" integrity="sha256-TFWSuDJt6kS+huV+vVlyV1jM3dwGdeNWqezhTxXB/X8=" crossorigin="anonymous"></script>
+
+
+
+  <script>
+    // Loading the Title Block
+    $(document).ready(function() {
+      $(".titleblock").hide().fadeIn(1000);
+      $("#instructions").hide().delay(250).fadeIn(1000);
+    });
+  </script>
+
+  <style>
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-light.ttf);
+      font-weight: lighter;
+    }
+
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-book.ttf);
+      font-weight: 300;
+
+    }
+
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-bold.ttf);
+      font-weight: bold;
+    }
+
+    @font-face {
+      font-family: Maison Neue;
+      src: url(Fonts/maisonneue-mono.ttf);
+      font-weight: 100;
+    }
+
+
+    body {
+      background: #f6f6f6;
+      width: auto;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+
+    #root {
+
+      width: 100%;
+      height: auto;
+      max-width: 800px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+
+    }
+
+    #blurbBlock {
+
+      display: block;
+      align-items: center;
+      width: auto;
+
+      font-family: Maison Neue;
+      font-weight: 100;
+
+    }
+
+    .description {
+
+      display: inline-block;
+      font-size: 22px;
+      line-height: 28px;
+      font-kerning: 12px;
+      letter-spacing: .25px;
+    }
+
+    #graphBlock {
+      display: block;
+
+      width: auto;
+      height: auto;
+
+    }
+
+    svg {
+
+      width: auto;
+      height: auto;
+      display: block;
+      margin: auto;
+      position: sticky;
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="root">
+    <div id="blurbBlock">
+
+      <p class="description">
+        <span style="font-size: 33px;">Hey!</span>
+      </br>
+      </br>
+        I'm <span id="about" style="text-decoration: underline; text-decoration-style: solid; background: #f8b330;">Advait</span>. I'm an Industrial Designer studying at <span id="risd" style="text-decoration: underline; text-decoration-style: solid; background: #f8b330;">RISD</span>.
+      </br>
+        I like to <span id="category">answer cool questions.</span>
+
+      </p>
+      <h5 style="font-family: Maison Neue; font-weight: 100; display: inline-block; margin-top: -20px;">Click on a node to learn more.</h5>
+
+    </div>
+
+    <div id="graphBlock">
+      <!-- svg is appended to here -->
+    </div>
+
+  </div>
+
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <!-- script for the force direted graph -->
+  <script>
+    var nodes = [{
+        id: "work",
+        group: 0,
+        label: "Work",
+        level: 2
+      },
+      {
+        id: "respaid",
+        group: 1,
+        label: "respAid",
+        level: 1
+      },
+      {
+        id: "empower",
+        group: 2,
+        label: "Empower",
+        level: 1
+      },
+      {
+        id: "potluck",
+        group: 2,
+        label: "Potluck",
+        level: 1
+      },
+      {
+        id: "shoppler",
+        group: 2,
+        label: "Shoppler",
+        level: 1
+      },
+      {
+        id: "greetingstreet",
+        group: 3,
+        label: "Greeting Street",
+        level: 2
+      },
+      {
+        id: "productdesign",
+        group: 1,
+        label: "PD",
+        level: 2
+      },
+      {
+        id: "interactiondesign",
+        group: 2,
+        label: "UI/UX"
+      },
+      {
+        id: "computation",
+        group: 3,
+        label: "Comp.",
+        level: 2
+      },
+      {
+        id: "weatherlogo",
+        group: 3,
+        label: "WeatherLogo",
+        level: 2
+      },
+      {
+        id: "fishtank",
+        group: 3,
+        label: "Fish Tank",
+        level: 2
+      }
+
+
+    ]
+    var links = [
+
+      // {
+      //   target: "respaid",
+      //   source: "interactiondesign",
+      //   strength: 0.1
+      // },
+
+      // {
+      //   target: "empower",
+      //   source: "shoppler",
+      //   strength: 0.05
+      // },
+      // {
+      //   target: "potluck",
+      //   source: "shoppler",
+      //   strength: 0.05
+      // },
+      // {
+      //   target: "empower",
+      //   source: "potluck",
+      //   strength: 0.05
+      // },
+      // { target: "potluck", source: "respaid" , strength: 0.3 },
+      // { target: "potluck", source: "cityconnect", strength: .05 },
+      // { target: "advait", source: "potluck",strength: .025},
+      // { target: "advait", source: "shoppler", strength: .025},
+      // { target: "advait", source: "empower",strength: .025},
+      // { target: "advait", source: "respaid",strength: .025},
+      {
+        target: "work",
+        source: "computation",
+        strength: .8
+      },
+      {
+        target: "work",
+        source: "productdesign",
+        strength: .8
+      },
+      {
+        target: "work",
+        source: "interactiondesign",
+        strength: .8
+      },
+
+      {
+        target: "respaid",
+        source: "productdesign",
+        strength: .5
+      },
+      {
+        target: "greetingstreet",
+        source: "productdesign",
+        strength: .7
+      },
+      {
+        target: "shoppler",
+        source: "interactiondesign",
+        strength: .7
+      },
+      {
+        target: "empower",
+        source: "interactiondesign",
+        strength: .7
+      },
+      {
+        target: "potluck",
+        source: "interactiondesign",
+        strength: .7
+      },
+
+      {
+        target: "computation",
+        source: "weatherlogo",
+        strength: .9
+      },
+      {
+        target: "computation",
+        source: "fishtank",
+        strength: .9
+      },
+      {
+        target: "computation",
+        source: "greetingstreet",
+        strength: .8
+      }
+
+
+
+
+    ]
+
+    var width = 500
+    var height = 500
+
+    var clicked = false;
+
+    var svg = d3.select('#graphBlock').append("svg")
+    svg.attr('width', width).attr('height', height)
+
+
+
+
+    // simulation setup with all forces
+    var linkForce = d3
+      .forceLink()
+      .id(function(link) {
+        return link.id
+      })
+      .strength(function(link) {
+        return link.strength
+      })
+
+
+    var dragDrop = d3.drag().on('start', function(node) {
+      node.fx = node.x
+      node.fy = node.y
+    }).on('drag', function(node) {
+      simulation.alphaTarget(.5).restart()
+      node.fx = d3.event.x
+      node.fy = d3.event.y
+    }).on('end', function(node) {
+      if (!d3.event.active) {
+        simulation.alphaTarget(0)
+      }
+      node.fx = null
+      node.fy = null
+    })
+
+
+
+    var simulation = d3
+      .forceSimulation()
+      .force('link', linkForce)
+      .force('charge', d3.forceManyBody().strength(-475))
+      .force('center', d3.forceCenter(width/2, height/2))
+
+
+    var linkElements = svg.append("g")
+      .attr("class", "links")
+      .selectAll("line")
+      .data(links)
+      .enter().append("line")
+      .attr("stroke-width", 1)
+      .attr("stroke", "rgba(0, 0, 0, 0.6)")
+
+    var nodeElements = svg.append("g")
+      .attr("class", "nodes")
+      .selectAll("circle")
+      .data(nodes)
+      .enter().append("circle")
+      .attr("r", 4)
+      .style("fill", function(node) {
+        var nodeColor = node.group;
+
+        switch(nodeColor) {
+
+          case 1:
+            return "#4d4d4d";
+          break;
+
+          case 2:
+            return "#fc5630";
+          break;
+
+          case 3:
+            return "#f8b330";
+          break;
+
+          default:
+            return "black";
+          break;
+
+        }
+
+      })
+      .call(dragDrop)
+      .on('click', selectNode)
+      .on('mouseover', mouseover)
+      .on('mouseout', mouseout)
+
+    nodeElements.append("circle")
+      .attr("r", 15)
+
+    var textElements = svg.append("g")
+      .attr("class", "texts")
+      .selectAll("text")
+      .data(nodes)
+      .enter().append("text")
+      .text(function(node) {
+        return node.label
+      })
+      .attr("color", "rbga(0,0,0,1)")
+      .attr("font-size", 12)
+      .attr("font-weight", 100)
+      .style("font-family", "Maison Neue")
+      .style('fill', 'black')
+      .attr("dx", 10)
+      .attr("dy", 4)
+
+    simulation.nodes(nodes).on('tick', () => {
+      nodeElements
+        .attr('cx', function(node) {
+          return node.x
+        })
+        .attr('cy', function(node) {
+          return node.y
+        })
+      textElements
+        .attr('x', function(node) {
+          return node.x
+        })
+        .attr('y', function(node) {
+          return node.y
+        })
+      linkElements
+        .attr('x1', function(link) {
+          return link.source.x
+        })
+        .attr('y1', function(link) {
+          return link.source.y
+        })
+        .attr('x2', function(link) {
+          return link.target.x
+        })
+        .attr('y2', function(link) {
+          return link.target.y
+        })
+
+    })
+
+
+
+    function selectNode() {
+
+      var name2 = d3.select(this).datum()
+      console.log(name2.label);
+
+      switch (name2.label) {
+
+        case "Empower":
+
+          window.location.href = "Empower.html";
+          break;
+
+        case "Potluck":
+          // console.log("Going to Potluck");
+          window.location.href = "Potluck.html";
+          break;
+
+        case "Shoppler":
+          window.location.href = "Shoppler.html";
+          break;
+
+        case "Greeting Street":
+          window.location.href = 'GreetingStreet.html';
+          break;
+
+        case "WeatherLogo":
+          window.location.href = "WeatherLogo.html";
+          break;
+
+      }
+    }
+
+    function mouseover() {
+      // console.log("hovering");
+      // console.log()
+      d3.select(this)
+        .transition()
+        .duration(250)
+        .attr("r", 8)
+
+    }
+
+    function mouseout() {
+      // console.log("left")
+      d3.select(this)
+        .transition()
+        .duration(250)
+        .attr("r", 4)
+    }
+
+    simulation.force("link").links(links)
+  </script>
+
+  <script>
+    let about = document.getElementById('about');
+    let risd = document.getElementById('risd');
+
+
+    about.addEventListener('click', function() {
+
+      window.location.href = 'About.html';
+    });
+
+    about.addEventListener('mouseover', function() {
+
+      about.style.cursor = "pointer";
+    });
+
+    risd.addEventListener('click', function() {
+
+      window.location.href = "http://www.risd.edu/";
+    });
+
+    risd.addEventListener('mouseover', function() {
+
+      risd.style.cursor = "pointer";
+    });
+
+
+  </script>
+</body>
+
+</html>
