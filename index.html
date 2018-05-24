@@ -201,6 +201,12 @@
         group: 3,
         label: "Fish Tank",
         level: 2
+      },
+      {
+        id: "overlay",
+        group: 3,
+        label: "Overlaying Realities",
+        level: 2
       }
 
 
@@ -290,6 +296,11 @@
         target: "computation",
         source: "greetingstreet",
         strength: .8
+      },
+      {
+        target: "computation",
+        source: "overlay",
+        strength: .9
       }
 
 
@@ -465,6 +476,10 @@
 
         case "WeatherLogo":
           window.location.href = "WeatherLogo.html";
+          break;
+
+        case "Overlaying Realities":
+          window.location.href = "OR_Website/OR.html";
           break;
 
       }

@@ -1,0 +1,104 @@
+@font-face {
+  font-family: Maison Neue;
+  src: url(maisonneue-medium.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Maison Neue;
+  src: url(maisonneue-bold.ttf);
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: Maison Neue;
+  src: url(maisonneue-mono.ttf);
+  font-weight: 100;
+}
+
+body {
+  background-color: black;
+
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+#container {
+  margin: auto;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#titleBlock {
+  display: block;
+  margin-left: 50px;
+}
+
+#title {
+  width: auto;
+  height: auto;
+  font-family: Maison Neue;
+  font-weight: bold;
+  font-size: 28px;
+  color: yellow;
+}
+
+#links {
+  color: white;
+  font-family: Maison Neue;
+  font-weight: 100;
+  font-size: 12px;
+}
+
+#blurbBlock {
+  display: block;
+  width: 25%;
+  margin-right: 50px;
+  margin-top: 30px;
+  padding: 10px;
+  min-width: 270px;
+}
+
+h4 {
+  display: block;
+  font-family: Maison Neue;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+
+#blurb {
+  display: block;
+  font-family: Maison Neue;
+  font-weight: 100;
+  font-size: 11px;
+  color: white;
+  margin-bottom: 40px;
+
+  line-height: 14px;
+}
+
+#goApp {
+  display: block;
+  margin: auto;
+  width: 100%;
+  min-width: 256px;
+  padding: 10px;
+  background-color: none;
+  border-color: white;
+  font-family: Maison Neue;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  outline: none;
+}
