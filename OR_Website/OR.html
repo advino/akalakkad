@@ -51,6 +51,31 @@
   </div>
 
   <script src="scripts.js" type="text/javascript"></script>
+  <script>
+    let work = document.getElementById('work');
+    let about = document.getElementById('about');
+    work.addEventListener('click', function() {
+
+      window.location.href = 'index.html';
+
+    });
+
+    about.addEventListener('click', function() {
+
+      window.location.href = 'About.html';
+    });
+
+    work.addEventListener('mouseover', function() {
+
+      work.style.cursor = 'pointer';
+    });
+
+    about.addEventListener('mouseover', function() {
+
+      about.style.cursor = 'pointer';
+    });
+
+  </script>
 </body>
 
 
