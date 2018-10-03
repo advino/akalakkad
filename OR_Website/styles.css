@@ -102,3 +102,23 @@ h4 {
   text-decoration: none;
   outline: none;
 }
+
+#navigation {
+
+  width: 90%;
+
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 15px;
+  padding-right: 30px;
+  font-family: Maison Neue;
+  font-size: 16px;
+  font-weight: 100;
+
+}
+
+.navItem {
+
+  margin-right: 20px;
+}
