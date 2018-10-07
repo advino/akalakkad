@@ -146,12 +146,12 @@
         label: "Work",
         level: 2
       },
-      // {
-      //   id: "respaid",
-      //   group: 1,
-      //   label: "respAid",
-      //   level: 1
-      // },
+      {
+        id: "blog",
+        group: 0,
+        label: "Blog",
+        level: 2
+      },
       {
         id: "empower",
         group: 2,
@@ -248,6 +248,12 @@
         source: "computation",
         strength: .8
       },
+      {
+        target: "work",
+        source: "blog",
+        strength: .8
+      },
+
       // {
       //   target: "work",
       //   source: "productdesign",
@@ -483,6 +489,10 @@
 
         case "O/R":
           window.location.href = "OR.html";
+          break;
+
+        case "Blog":
+          window.location.href = 'https://soupmetaphors.tumblr.com/';
           break;
 
       }
