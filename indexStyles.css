@@ -1,0 +1,82 @@
+@font-face {
+  font-family: Maison Neue;
+  src: url(Fonts/maisonneue-light.ttf);
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: Maison Neue;
+  src: url(Fonts/maisonneue-book.ttf);
+  font-weight: 300;
+
+}
+
+@font-face {
+  font-family: Maison Neue;
+  src: url(Fonts/maisonneue-bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Maison Neue;
+  src: url(Fonts/maisonneue-mono.ttf);
+  font-weight: 100;
+}
+
+
+body {
+  background: #FFFFFF;
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#root {
+
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+
+}
+
+#blurbBlock {
+
+  display: block;
+  align-items: center;
+  width: auto;
+
+  font-family: Maison Neue;
+  font-weight: 100;
+
+}
+
+.description {
+
+  display: inline-block;
+  font-size: 22px;
+
+}
+
+#graphBlock {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+}
+
+svg {
+
+  width: auto;
+  height: auto;
+  display: block;
+  margin: auto;
+  position: sticky;
+
+}
