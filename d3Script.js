@@ -129,8 +129,6 @@ var dragDrop = d3.drag().on('start', function(node) {
   node.fy = null
 })
 
-
-
 var simulation = d3
   .forceSimulation()
   .force('link', linkForce)
