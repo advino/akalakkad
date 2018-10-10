@@ -47,7 +47,6 @@ a {
   max-width: 800px;
   display: flex;
   justify-content: space-between;
-
   margin: auto;
 
 }
@@ -83,7 +82,7 @@ a {
   align-items: center;
   width: auto;
   height: auto;
-
+  
 }
 
 svg {
