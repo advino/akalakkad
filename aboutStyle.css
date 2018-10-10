@@ -70,6 +70,7 @@ a {
 
 #bioBlurb a {
   font-size: 12px;
+  margin-right: 10px;
 }
 
 h2 {
@@ -103,8 +104,7 @@ img {
 }
 
 #bioBlurb div {
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
+  width: 80%;
+  display: inline-block;
   margin-top: 30px;
 }
