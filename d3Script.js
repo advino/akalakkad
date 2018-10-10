@@ -52,14 +52,13 @@ var nodes = [{
     level: 2
   },
   {
-    id:"google",
+    id: "google",
     group: 3,
     label: "Google",
     level: 2
   }
 ]
-var links = [
-  {
+var links = [{
     target: "work",
     source: "computation",
     strength: .8
@@ -155,7 +154,7 @@ var simulation = d3
   .forceSimulation()
   .force('link', linkForce)
   .force('charge', d3.forceManyBody().strength(-475))
-  .force('center', d3.forceCenter(width/2, height/2))
+  .force('center', d3.forceCenter(width / 2, height / 2))
 
 
 var linkElements = svg.append("g")
@@ -277,7 +276,7 @@ function mouseover() {
     .attr("r", 10)
 
   let projectTitle = document.getElementById('projectTitle');
-  if(d3.select(this).datum().group === 3) {
+  if (d3.select(this).datum().group === 3) {
     let label = d3.select(this).datum().label;
     let id = d3.select(this).datum().id;
     let projectBlurb = document.getElementById('projectBlurbs');
@@ -301,10 +300,10 @@ function mouseout() {
     .duration(250)
     .attr("r", 5)
 
-    let projectTitle = document.getElementById('projectTitle');
-    let introDescription = document.getElementById('introDescription');
-    projectTitle.innerHTML = 'hey!';
-    introDescription.innerHTML = "I'm <a href='About.html'>Advait</a>. I'm an Industrial Designer studying at <a href='https://www.risd.edu'>RISD</a>.</br>I like to answer cool questions.";
+  let projectTitle = document.getElementById('projectTitle');
+  let introDescription = document.getElementById('introDescription');
+  projectTitle.innerHTML = 'hey!';
+  introDescription.innerHTML = "I'm <a href='About.html'>Advait</a>. I'm an Industrial Designer studying at <a href='https://www.risd.edu'>RISD</a>.</br>I like to answer cool questions.";
 
 }
 

@@ -6,152 +6,45 @@
 
 <head>
   <title> About </title>
-    <script src="https://code.jquery.com/jquery-3.3.0.js" integrity="sha256-TFWSuDJt6kS+huV+vVlyV1jM3dwGdeNWqezhTxXB/X8=" crossorigin="anonymous"></script>
-
-  <style>
-    @font-face {
-      font-family: Maison Neue;
-      src: url(Fonts/maisonneue-light.ttf);
-      font-weight: lighter;
-    }
-
-    @font-face {
-      font-family: Maison Neue;
-      src: url(Fonts/maisonneue-book.ttf);
-      font-weight: 300;
-
-    }
-
-    @font-face {
-      font-family: Maison Neue;
-      src: url(Fonts/maisonneue-bold.ttf);
-      font-weight: bold;
-    }
-
-    @font-face {
-      font-family: Maison Neue;
-      src: url(Fonts/maisonneue-mono.ttf);
-      font-weight: 100;
-    }
-
-    body {
-      background: #FFFFFF;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-    }
-
-    #root {
-      width: 100%;
-      height: 450px;
-      margin: auto;
-      /* display: flex;
-      justify-content: center; */
-      padding-left: 10px;
-
-    }
-
-    #navigation {
-
-      width: 90%;
-
-      display: flex;
-      justify-content: flex-end;
-      padding: 15px;
-      padding-right: 30px;
-      font-family: Maison Neue;
-      font-size: 16px;
-      font-weight: 100;
-
-    }
-
-    .navItem {
-
-      margin-right: 20px;
-    }
-
-    p {
-      color: black;
-      display: block;
-
-    }
-
-    #bio {
-      width: 300px;
-      height: 100%;
-      position: relative;
-      margin: auto;
-      padding: 10px;
-      border-style: solid;
-      border-width: 1.25px;
-      border-radius: 6px;
-      border-color: black;
-      display: block;
-    }
-
-  </style>
-
+  <script src="https://code.jquery.com/jquery-3.3.0.js" integrity="sha256-TFWSuDJt6kS+huV+vVlyV1jM3dwGdeNWqezhTxXB/X8=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="aboutStyle.css">
 </head>
 
 
 <body>
   <div id="root">
 
-    <nav id="navigation"><span id="work" class="navItem">Work</span><span class="navItem" id="about">About</span></nav>
+    <nav id="navigation"><a href="index.html" id="work" class="navItem">Work</a><a href="About.html" class="navItem" id="about">About</a></nav>
 
     <div id="bio">
-      <p style="font-family: Maison Neue; font-weight:100; width: auto; font-size: 12px; line-height: 18px;">Advait Kalakkad is an Industrial Designer studying Interaction Design and Human-Computer Interaction at RISD.
-        </br>
-        </br>
-        Using innovative and accessible user experiences, Advait hopes to help <span style="background: #f8b330;">leverage emerging technologies</span> in ways that impact a <span style="background: #f8b330;">wide range of users and demographics</span>.
-      </br>
-    </br>
-    Previously at Google AI.
-      </p>
+      <div id="aboutImage">
+        <img src="Advait.jpg">
+      </div>
+      <div id="bioBlurb">
+        <h2>The Plot Thickens is a Soup Metaphor</h2>
+        <p style="font-family: Maison Neue; font-weight:100;line-height: 18px;">
+          I love to connect the dots, to better understand the relationships between ideas, beliefs, products, and users.
+          From using AR to educate cities about climate change, to investigating new prototyping methods with AI, I’ve learned to leverage skills in Interaction Design, Prototyping, and Design-Research to center products around delightful
+          UX. I love to build and test fast, and I learn best by quickly putting prototypes in user’s hands.
 
-      <!-- <button id="chatbotButton">Let's Chat!</button> -->
+          </br>
+          </br>
+          In the past I’ve worked on Google R/MI, helping bring Artificial Intelligence into the maker toolkit. Currently I’m finishing up my final year at the Rhode Island School of Design where I’ll be getting my Bachelors in Industrial Design.
+
+          </br>
+          </br>
+          Feel free to hit me up about a new opportunity, a cool project idea, or questions about my work, I’m happy to chat!
+        </p>
+
+      <div>
+        <a href="Advait Kalakkad Resume 2018-2019.pdf">Resume</a>
+        <a href="mailto:akalakka@risd.edu">Email</a>
+        <a href="https://www.are.na/advait-kalakkad/">Are.na</a>
+        <a href="https://github.com/akalakkad">GitHub</a>
+      </div>
+
+      </div>
     </div>
-
-    <script>
-      let work = document.getElementById('work');
-      let about = document.getElementById('about');
-      let button = document.getElementById('chatbotButton');
-
-      work.addEventListener('click', function() {
-
-        window.location.href = 'index.html';
-      });
-
-      work.addEventListener('mouseover', function() {
-
-        work.style.cursor = 'pointer';
-      });
-
-      about.addEventListener('mouseover', function() {
-
-        about.style.cursor = 'pointer';
-      });
-
-      about.addEventListener('click', function() {
-
-        window.location.href = 'About.html';
-      });
-
-      button.addEventListener('mousedown', function() {
-
-        button.style.background = "#f8b330";
-      });
-
-      button.addEventListener('mouseup', function() {
-
-        button.style.background = none;
-      });
-
-
-    </script>
-
 </body>
 
 </html>
