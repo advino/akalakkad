@@ -251,7 +251,7 @@ function selectNode() {
       break;
 
     case "Greeting Street":
-      window.location.href = 'GreetingStreet.html';
+      window.location.href = "GreetingStreet.html";
       break;
 
     case "WeatherLogo":
