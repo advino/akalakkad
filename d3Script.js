@@ -288,7 +288,7 @@ function mouseover() {
 
   } else {
     projectTitle.innerHTML = 'hey!';
-    introDescription.innerHTML = "I'm <a href='About.html'>Advait</a>. I'm an Industrial Designer studying at <a href='https://www.risd.edu'>RISD</a>.</br>I like to answer cool questions.";
+    introDescription.innerHTML = "I'm <a href='About.html'>Advait</a>. I'm an Interaction Designer studying at <a href='https://www.risd.edu'>RISD</a>.</br>I like to answer cool questions.";
   }
 
 
@@ -303,7 +303,7 @@ function mouseout() {
   let projectTitle = document.getElementById('projectTitle');
   let introDescription = document.getElementById('introDescription');
   projectTitle.innerHTML = 'hey!';
-  introDescription.innerHTML = "I'm <a href='About.html'>Advait</a>. I'm an Industrial Designer studying at <a href='https://www.risd.edu'>RISD</a>.</br>I like to answer cool questions.";
+  introDescription.innerHTML = "I'm <a href='About.html'>Advait</a>. I'm an Interaction Designer studying at <a href='https://www.risd.edu'>RISD</a>.</br>I like to answer cool questions.";
 
 }
 
