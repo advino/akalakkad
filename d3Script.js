@@ -50,6 +50,12 @@ var nodes = [{
     group: 3,
     label: "O/R",
     level: 2
+  },
+  {
+    id:"google",
+    group: 3,
+    label: "Google",
+    level: 2
   }
 ]
 var links = [
@@ -92,10 +98,26 @@ var links = [
     target: "computation",
     source: "overlay",
     strength: .9
+  },
+
+  {
+    target: "interactiondesign",
+    source: "google",
+    strength: .5
   }
 ]
 
-var width = 500
+var blurbs = {
+  potluck: "Food tastes better with others! Creating online communities around food.",
+  shoppler: "Exploring behavior change design with grocery shoppers.",
+  empower: "Designing intellgent services for long-term investments.",
+  overlay: "Creating urgency around Climate Change through Augmented Reality.",
+  greetingstreet: "Creating interactive and connected experiences for commuters.",
+  google: "Artificial Intelligence and You! A summer with AIY Projects.",
+  blog: "Writing, Process, and Inspiration!"
+}
+
+var width = 550
 var height = 500
 
 var clicked = false;
@@ -249,8 +271,6 @@ function selectNode() {
 }
 
 function mouseover() {
-  // console.log("hovering");
-  // console.log()
   d3.select(this)
     .transition()
     .duration(250)
@@ -259,24 +279,33 @@ function mouseover() {
   let projectTitle = document.getElementById('projectTitle');
   if(d3.select(this).datum().group === 3) {
     let label = d3.select(this).datum().label;
+    let id = d3.select(this).datum().id;
+    let projectBlurb = document.getElementById('projectBlurbs');
+    let introDescription = document.getElementById('introDescription');
     projectTitle.innerHTML = label.toLowerCase();
+    introDescription.innerHTML = blurbs[id];
+
+
+
   } else {
     projectTitle.innerHTML = 'hey!';
+    introDescription.innerHTML = "I'm <a href='About.html'>Advait</a>. I'm an Industrial Designer studying at <a href='https://www.risd.edu'>RISD</a>.</br>I like to answer cool questions.";
   }
 
 
 }
 
 function mouseout() {
-  // console.log("left")
   d3.select(this)
     .transition()
     .duration(250)
     .attr("r", 5)
 
     let projectTitle = document.getElementById('projectTitle');
-
+    let introDescription = document.getElementById('introDescription');
     projectTitle.innerHTML = 'hey!';
+    introDescription.innerHTML = "I'm Advait. I'm an Industrial Designer studying at RISD.</br>I like to answer cool questions.";
+
 }
 
 simulation.force("link").links(links)

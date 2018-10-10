@@ -33,6 +33,13 @@ body {
   align-content: center;
 }
 
+a {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  color: black;
+
+}
+
 #root {
 
   width: 100%;
@@ -40,7 +47,7 @@ body {
   max-width: 800px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
   margin: auto;
 
 }
@@ -49,23 +56,31 @@ body {
 
   display: block;
   align-items: center;
+  position: relative;
   width: auto;
-
+  height: 250px;
+  margin-top: 100px;
   font-family: Maison Neue;
   font-weight: 100;
 
 }
 
+#projectTitle {
+  font-family: Maison Neue;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+
 .description {
 
-  display: inline-block;
-  font-size: 22px;
-
+  display: relative;
+  font-size: 18px;
+  line-height: 20px;
 }
 
 #graphBlock {
   display: block;
-
+  align-items: center;
   width: auto;
   height: auto;
 
