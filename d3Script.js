@@ -31,7 +31,7 @@ var nodes = [{
   {
     id: "greetingstreet",
     group: 3,
-    label: "Greeting St.",
+    label: "Greeting Street",
     level: 2
   },
   {
