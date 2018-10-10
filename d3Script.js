@@ -262,6 +262,10 @@ function selectNode() {
       window.location.href = "OR.html";
       break;
 
+    case "Google":
+      window.location.href = "google.html";
+      break;
+
     case "Blog":
       window.location.href = 'https://soupmetaphors.tumblr.com/';
       break;

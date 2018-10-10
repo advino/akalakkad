@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  <style>
+  @font-face {
+    font-family: Maison Neue;
+    src: url(Fonts/maisonneue-light.ttf);
+    font-weight: lighter;
+  }
+
+
+  @font-face {
+    font-family: Maison Neue;
+    src: url(Fonts/maisonneue-book.ttf);
+    font-weight: 300;
+
+  }
+
+  @font-face {
+    font-family: Maison Neue;
+    src: url(Fonts/maisonneue-bold.ttf);
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: Maison Neue;
+    src: url(Fonts/maisonneue-mono.ttf);
+    font-weight: 100;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    background: #FFFFFF;
+  }
+
+  h1 {
+
+    font-family: Maison Neue;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  #root {
+    width: 100%;
+    margin: auto;
+  }
+
+  #navigation {
+
+    width: 90%;
+
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    padding-right: 30px;
+    font-family: Maison Neue;
+    font-size: 16px;
+    font-weight: 100;
+
+  }
+
+  .navItem {
+
+    margin-right: 20px;
+  }
+
+  #titleBlock {
+    width: 75%;
+    max-width: 750px;
+    margin: auto;
+    margin-bottom: 100px;
+    padding: 10px;
+  }
+
+
+  #projectTags {
+
+    width: auto;
+
+  }
+
+  .tag {
+    display: inline;
+    min-width: 75px;
+    padding: 8px;
+    margin-right: 10px;
+    text-align: center;
+    font-family: Maison Neue;
+    font-weight: 100;
+    height: 50%;
+    background: #E7E7E7;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+
+  #description {
+    display: inline-block;
+    margin-top: 30px;
+    width: 300px;
+    font-family: Maison Neue;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  #description a {
+    text-decoration: underline;
+  }
+
+  #infoBlock {
+    width: auto;
+  }
+
+  #googleImage {
+    display: inline-block;
+    float: right;
+    width: 400px;
+    height: auto;
+    transform: rotate(90deg);
+  }
+  </style>
+</head>
+
+<body>
+
+  <div id="root">
+    <nav id="navigation"><a href="index.html" class="navItem">Work</a><a class="navItem" href="About.html">About</a></nav>
+    <div id="titleBlock">
+      <h1>AIY Projects:
+
+      </br>
+      Google Summer 2018</h1>
+      <div id="projectTags">
+        <p class="tag">UX</p>
+        <p class="tag">Interaction Design</p>
+        <p class="tag">Internship</p>
+      </div>
+
+      <p id="description">
+        Over the summer of 2018 I had the incredible fortune work at Google AI as a UX Intern. As an intern, I worked on developing compelling use-cases for AIY Projects, an experimental prototyping platorm for designing AI-centered products.
+      </br>
+    </br>
+        I conducted user research and problem framing, developed interaction patterns and design guidlines for AIY, and implemented my designs in Python alongside intelligence models such as ImageNet.
+      </br>
+    </br>
+      While I can't showcase the details just yet, I am happy to say that my project will be open-sourced on the <a href='https://aiyprojects.withgoogle.com/'>AIY website</a> this fall! If you have more questions, feel free to email me!
+      </p>
+
+        <img id="googleImage" src="Google.JPG">
+    </div>
+
+  </div>
+
+
+
+
+</body>
+
+
+</html>
